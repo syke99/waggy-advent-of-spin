@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Quinn Millican <quinn.millican@tpginc.com>"]
+description = "My Advent of Spin with Waggy"
+name = "waggy-advent-of-spin"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "waggy-advent-of-spin"
+source = "main.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "tinygo build -wasm-abi=generic -target=wasi -gc=leaking -no-debug -o main.wasm main.go"
