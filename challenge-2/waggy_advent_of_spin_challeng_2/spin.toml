@@ -1,12 +1,12 @@
 spin_version = "1"
-authors = ["Quinn Millican <quinn.millican@tpginc.com>"]
+authors = ["Quinn Millican <quinnmillican@gmail.com>"]
 description = "My Advent of Spin with Waggy"
-name = "waggy-advent-of-spin"
+name = "waggy_advent_of_spin/challenge-2"
 trigger = { type = "http", base = "/" }
 version = "0.1.0"
 
 [[component]]
-id = "waggy-advent-of-spin"
+id = "waggy-advent-of-spin-challeng-2"
 source = "main.wasm"
 [component.trigger]
 route = "/..."
