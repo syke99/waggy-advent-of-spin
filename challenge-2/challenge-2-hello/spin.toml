@@ -8,6 +8,7 @@ version = "0.1.0"
 [[component]]
 id = "challenge-2-hello"
 source = "main.wasm"
+allowed_http_hosts = [ "127.0.0.1:3001" ]
 [component.trigger]
 route = "/..."
 [component.build]

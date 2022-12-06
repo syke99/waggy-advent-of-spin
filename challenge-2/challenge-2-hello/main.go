@@ -22,7 +22,7 @@ func init() {
 		if name != "" {
 			lowerCaseName := ""
 
-			resp, err := spinhttp.Post("127.0.0.1/lowercase", "application/json", bytes.NewBufferString(fmt.Sprintf("{ \"message\": %s", name)))
+			resp, err := spinhttp.Post("127.0.0.1:3001/lowercase", "application/json", bytes.NewBufferString(fmt.Sprintf("{ \"message\": %s", name)))
 			if err != nil {
 				waggy.WriteDefaultErrorResponse(w, r)
 			}
