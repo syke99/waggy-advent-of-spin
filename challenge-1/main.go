@@ -11,6 +11,9 @@ var flg waggy.FullCGI
 
 func init() {
 	spinhttp.Handle(func(w http.ResponseWriter, r *http.Request) {
+		/*
+			Create a WaggyHandler to handle the hello endpoint
+		*/
 		helloWorldJSONBytes := []byte("{ \"message\":\"Hello, world\" }")
 
 		helloHandler := func(w http.ResponseWriter, r *http.Request) {
