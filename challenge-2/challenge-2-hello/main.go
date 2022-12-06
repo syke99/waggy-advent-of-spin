@@ -32,6 +32,7 @@ func init() {
 				resp, err := spinhttp.Post("127.0.0.1:3001/lowercase", "application/json", bytes.NewBufferString(fmt.Sprintf("{ \"message\": %s", name)))
 				if err != nil {
 					waggy.WriteDefaultErrorResponse(w, r)
+					return
 				}
 				defer resp.Body.Close()
 
@@ -43,6 +44,7 @@ func init() {
 
 				if err != nil {
 					waggy.WriteDefaultErrorResponse(w, r)
+					return
 				}
 
 				splitBody := strings.Split(string(body), " ")

@@ -1,6 +1,6 @@
 spin_version = "1"
-authors = ["Quinn Millican <quinn.millican@tpginc.com>"]
-description = "this service returns the "/lowercase" endpoint"
+authors = ["Quinn Millican <quinnmillican@gmail.com>"]
+description = "this service returns the \"/lowercase\" endpoint"
 name = "challenge-2-lowercase"
 trigger = { type = "http", base = "/" }
 version = "0.1.0"
