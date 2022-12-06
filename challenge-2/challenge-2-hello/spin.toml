@@ -1,5 +1,5 @@
 spin_version = "1"
-authors = ["Quinn Millican <quinn.millican@tpginc.com>"]
+authors = ["Quinn Millican <quinnmillican@gmail.com>"]
 description = "this service returns the \"hello/*\" endpoint"
 name = "challenge-2-hello"
 trigger = { type = "http", base = "/" }
