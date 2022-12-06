@@ -24,7 +24,7 @@ func init() {
 
 			name := waggy.Vars(r)["name"]
 
-			helloElfJSON := "{ \"message\":\"Hello, world\" }"
+			helloElfJSON := "{ \"message\": \"Hello, world\" }"
 
 			if name != "" {
 				lowerCaseName := ""
