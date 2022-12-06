@@ -6,3 +6,5 @@ github.com/syke99/waggy v0.4.1 h1:kbk/aw2fSYWh8Qcwlf3yUof9kLKHhupynMJQXRMgKDs=
 github.com/syke99/waggy v0.4.1/go.mod h1:mvU3ZAXV18ikNjjDRzYEqOGdyi6kqUPENrTBZImc1ik=
 github.com/syke99/waggy v0.4.3 h1:gLmnQnVg3zNaGiLeFFp/QMQXxdGYeEvugJvczbHK0Hw=
 github.com/syke99/waggy v0.4.3/go.mod h1:mvU3ZAXV18ikNjjDRzYEqOGdyi6kqUPENrTBZImc1ik=
+github.com/syke99/waggy v0.4.4 h1:H3mjS6K1MPnyFzyfS+8cOP0+tKruuuC+tdfFedLlqQg=
+github.com/syke99/waggy v0.4.4/go.mod h1:mvU3ZAXV18ikNjjDRzYEqOGdyi6kqUPENrTBZImc1ik=
