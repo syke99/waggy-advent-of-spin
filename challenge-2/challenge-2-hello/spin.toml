@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Quinn Millican <quinn.millican@tpginc.com>"]
+description = "this service returns the \"hello/*\" endpoint"
+name = "challenge-2-hello"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "challenge-2-hello"
+source = "main.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "tinygo build -wasm-abi=generic -target=wasi -gc=leaking -no-debug -ldflags=\"-X main.flg=1\" -o main.wasm main.go"
