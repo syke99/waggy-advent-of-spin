@@ -14,7 +14,7 @@ func init() {
 		/*
 			Create a WaggyHandler to handle the hello endpoint
 		*/
-		helloWorldJSONBytes := []byte("{ \"message\":\"Hello, world\" }")
+		helloWorldJSONBytes := []byte("{ \"message\":\"Hello, world!\" }")
 
 		helloHandler := func(w http.ResponseWriter, r *http.Request) {
 			waggy.WriteDefaultResponse(w, r)
