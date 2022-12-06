@@ -2,12 +2,11 @@ package main
 
 import (
 	"fmt"
+	spinhttp "github.com/fermyon/spin/sdk/go/http"
 	"github.com/syke99/waggy"
 	"io/ioutil"
 	"net/http"
 	"strings"
-
-	spinhttp "github.com/fermyon/spin/sdk/go/http"
 )
 
 var flg waggy.FullCGI
@@ -18,12 +17,17 @@ func init() {
 			body, err := ioutil.ReadAll(r.Body)
 			if err != nil {
 				waggy.WriteDefaultErrorResponse(w, r)
+				return
 			}
 
-			lowerCasedName := strings.ToLower(string(body))
+			bodyString := string(body)
+
+			bodyParts := strings.Split(bodyString, ": ")
+
+			lowerCasedName := strings.TrimSpace(strings.ToLower(bodyParts[1]))
 
 			w.Header().Set("Content-Type", "application/json")
-			fmt.Fprintln(w, fmt.Sprintf("{ \"message\":\"%s\" }", lowerCasedName))
+			fmt.Fprintln(w, fmt.Sprintf("{ \"message\": \"%s\" }", lowerCasedName))
 		}
 
 		we := waggy.WaggyError{

@@ -11,4 +11,4 @@ source = "main.wasm"
 [component.trigger]
 route = "/..."
 [component.build]
-command = "tinygo build -wasm-abi=generic -target=wasi -gc=leaking -no-debug -o main.wasm main.go"
+command = "tinygo build -wasm-abi=generic -target=wasi -gc=leaking -no-debug -ldflags=\"-X main.flg=1\" -o main.wasm main.go"
