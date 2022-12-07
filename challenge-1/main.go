@@ -3,8 +3,8 @@ package main
 import (
 	"net/http"
 
-	"github.com/syke99/waggy"
 	spinhttp "github.com/fermyon/spin/sdk/go/http"
+	"github.com/syke99/waggy"
 )
 
 var flg waggy.FullCGI
@@ -21,7 +21,7 @@ func init() {
 		}
 
 		handler := waggy.InitHandlerWithRoute("/hello", &flg).
-			WithDefaultResponse(helloWorldJSONBytes).
+			WithDefaultResponse("application/json", helloWorldJSONBytes).
 			MethodHandler(http.MethodGet, helloHandler)
 
 		handler.ServeHTTP(w, r)
