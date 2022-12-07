@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"strings"
-	
+
 	spinhttp "github.com/fermyon/spin/sdk/go/http"
 	"github.com/syke99/waggy"
 )
@@ -30,7 +30,9 @@ func init() {
 			if name != "" {
 				lowerCaseName := ""
 
-				resp, err := spinhttp.Post("http://127.0.0.1:3001/lowercase", "application/json", bytes.NewBufferString(fmt.Sprintf("{ \"message\": %s }", name)))
+				reqBody := bytes.NewBufferString(fmt.Sprintf("{ \"message\": \"%s\" }", name))
+
+				resp, err := spinhttp.Post("http://127.0.0.1:3001/lowercase", "application/json", reqBody)
 				if err != nil {
 					waggy.WriteDefaultErrorResponse(w, r)
 					return
