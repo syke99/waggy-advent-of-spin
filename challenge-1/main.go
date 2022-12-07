@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/syke99/waggy"
 	"net/http"
 
+	"github.com/syke99/waggy"
 	spinhttp "github.com/fermyon/spin/sdk/go/http"
 )
 
@@ -14,7 +14,7 @@ func init() {
 		/*
 			Create a WaggyHandler to handle the hello endpoint
 		*/
-		helloWorldJSONBytes := []byte("{ \"message\":\"Hello, world!\" }")
+		helloWorldJSONBytes := []byte("{ \"message\": \"Hello, world!\" }")
 
 		helloHandler := func(w http.ResponseWriter, r *http.Request) {
 			waggy.WriteDefaultResponse(w, r)

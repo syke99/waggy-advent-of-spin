@@ -3,11 +3,12 @@ package main
 import (
 	"bytes"
 	"fmt"
-	spinhttp "github.com/fermyon/spin/sdk/go/http"
-	"github.com/syke99/waggy"
 	"io/ioutil"
 	"net/http"
 	"strings"
+	
+	spinhttp "github.com/fermyon/spin/sdk/go/http"
+	"github.com/syke99/waggy"
 )
 
 var flg waggy.FullCGI
@@ -24,7 +25,7 @@ func init() {
 
 			name := waggy.Vars(r)["name"]
 
-			helloElfJSON := "{ \"message\":\"Hello, world\" }"
+			helloElfJSON := "{ \"message\": \"Hello, world\" }"
 
 			if name != "" {
 				lowerCaseName := ""
