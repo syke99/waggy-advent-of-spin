@@ -66,20 +66,12 @@ func init() {
 				}
 
 				// extract the lower cased name from the read resp.Body
-				splitBody := strings.Split(string(body), " ")
+				splitBody := strings.Split(string(body), ":")
 
-				for _, bodyPart := range splitBody {
-					println(bodyPart)
-				}
-
-				if len(splitBody) > 3 {
-					lowerCaseName = splitBody[2:3][0]
-				}
-
-				if len(lowerCaseName) != 0 &&
-					lowerCaseName[:1] == "\"" &&
-					lowerCaseName[len(lowerCaseName)-1:] == "\"" {
-					lowerCaseName = lowerCaseName[1 : len(lowerCaseName)-1]
+				if len(splitBody) == 2 {
+					lowerCaseName = strings.Replace(splitBody[1], "}", "", -1)
+					lowerCaseName = strings.Replace(lowerCaseName, "\"", "", -1)
+					lowerCaseName = strings.TrimSpace(lowerCaseName)
 				}
 
 				// update the response to be written back to the client with the lower
