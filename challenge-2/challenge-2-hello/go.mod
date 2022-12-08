@@ -4,5 +4,5 @@ go 1.18
 
 require (
 	github.com/fermyon/spin/sdk/go v0.6.0
-	github.com/syke99/waggy v0.4.12
+	github.com/syke99/waggy v0.4.13
 )
