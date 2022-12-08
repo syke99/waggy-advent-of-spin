@@ -69,8 +69,12 @@ func init() {
 				splitBody := strings.Split(string(body), ":")
 
 				if len(splitBody) == 2 {
+					// after splitting the response body, remove the trailing "}"
+					// from the second value in splitBody and set it equal to lowerCaseName
 					lowerCaseName = strings.Replace(splitBody[1], "}", "", -1)
+					// strip any quotation marks from lowerCaseName
 					lowerCaseName = strings.Replace(lowerCaseName, "\"", "", -1)
+					// remove any remaining whitespace from the lowerCaseName
 					lowerCaseName = strings.TrimSpace(lowerCaseName)
 				}
 
