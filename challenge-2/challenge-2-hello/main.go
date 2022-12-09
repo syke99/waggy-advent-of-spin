@@ -30,15 +30,9 @@ func Handler404(flg waggy.FullCGI) *waggy.WaggyHandler {
 	// one handler initialized with Waggy to handle different HTTP Methods
 	// with different handler funcs
 	handler := waggy.InitHandlerWithRoute("/", &flg).
-		MethodHandler(http.MethodGet, _handler404).
-		MethodHandler(http.MethodPost, _handler404).
-		MethodHandler(http.MethodPut, _handler404).
-		MethodHandler(http.MethodPatch, _handler404).
-		MethodHandler(http.MethodTrace, _handler404).
-		MethodHandler(http.MethodOptions, _handler404).
-		MethodHandler(http.MethodHead, _handler404).
-		MethodHandler(http.MethodConnect, _handler404).
-		MethodHandler(http.MethodDelete, _handler404)
+		// using waggy.AllHTTPMethods makes it clean and simple to map
+		// a single handler to all HTTP methods, such as this 404 handler
+		MethodHandler(waggy.AllHTTPMethods(), _handler404)
 
 	return handler
 }
