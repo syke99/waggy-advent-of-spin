@@ -49,8 +49,6 @@ func HelloHandler(flg waggy.FullCGI) *waggy.WaggyHandler {
 		// to say hello to
 		name := waggy.Vars(r)["name"]
 
-		println(name)
-
 		// start off assuming that no name was provided
 		helloElfJSON := "{ \"message\": \"Hello, world\" }"
 
