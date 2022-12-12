@@ -5,7 +5,7 @@ import (
 	"net/http"
 )
 
-func HelloHandler(flg waggy.FullCGI) *waggy.WaggyHandler {
+func HelloHandler(flg waggy.FullServer) *waggy.Handler {
 	helloWorldJSONBytes := []byte("{ \"message\": \"Hello, world!\" }")
 
 	// create a handler func that you can map to the HTTP Methods

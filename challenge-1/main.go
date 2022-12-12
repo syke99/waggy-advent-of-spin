@@ -7,7 +7,7 @@ import (
 	"github.com/syke99/waggy"
 )
 
-var flg waggy.FullCGI
+var flg waggy.FullServer
 
 func init() {
 	spinhttp.Handle(func(w http.ResponseWriter, r *http.Request) {

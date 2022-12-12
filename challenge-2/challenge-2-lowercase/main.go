@@ -9,9 +9,9 @@ import (
 	"strings"
 )
 
-var flg waggy.FullCGI
+var flg waggy.FullServer
 
-func LowerCaseHandler(flg waggy.FullCGI) *waggy.WaggyHandler {
+func LowerCaseHandler(flg waggy.FullServer) *waggy.Handler {
 	// create a handler func that you can map to the HTTP Methods
 	// you want this handler func to run on (in more complex examples, this allows
 	// one handler initialized with Waggy to handle different HTTP Methods
